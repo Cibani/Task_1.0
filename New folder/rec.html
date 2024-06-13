@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link rel="stylesheet" href="rec.css">
+</head>
+<body>
+    <div class="card">
+        <button class="button" onclick="handleClick()">Click me!</button>
+        <p id="count">Count: 0</p>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function handleClick() {
+            count++;
+            document.getElementById('count').textContent = 'Count: ' + count;
+            trackEvent('button_click', { label: 'Increment' });
+        }
+
+        function trackEvent(event, data) {
+            console.log('Event tracked:', event, data);
+            // Implement your analytics tracking logic here
+        }
+    </script>
+</body>
+</html>
